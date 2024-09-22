@@ -1,7 +1,7 @@
 
 const buttons = document.querySelector("#buttons");
 const results = document.querySelector("#results");
-const pagination = document.querySelector("#pagination");
+const pages = document.querySelector("#pagination");
 
 // async function to fetch data from the SWAPI API //rus notes for myself: функция для запроса данных с сервера SWAPI
 async function asyncFetch(apiValue, url = 0) {
@@ -155,7 +155,7 @@ function showResults(data, apiValue) {
 }
 
 function getOtherPages(data, apiValue) {
-  pagination.innerHTML = "";
+  pages.innerHTML = "";
 
   if (data.previous) {
     const prevButton = document.createElement("button");
