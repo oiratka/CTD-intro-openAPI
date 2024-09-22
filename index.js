@@ -1,26 +1,54 @@
-fetch('https://api.github.com/users/oiratka/repos')
-.then(response => response.json())
-.then(repositories =>{
-    console.log(repositories)
-    const projectSection = document.getElementById('project');
-    const projectList = projectSection.querySelector('#listOfProjects');
-    for (let i = 0; i < repositories.length; i++){
-        let project = document.createElement('li');
-        project.innerText = repositories[i].name;
-        projectList.appendChild(project)
-    }
-})
-.catch(err => console.log(err))
 
-fetch("https://www.swapi.tech/api/species")
-.then(res => res.json())
-.then(data => {console.log(data)
-const starWarsSection = document.getElementById('starWarsAPI');
-const starWarsList = starWarsSection.querySelector('#people');
-for (let i = 0; i < data.results.length; i++){
-    let starWarsAPI = document.createElement('li');
-    starWarsAPI.innerText = data.results[i].name;
-    starWarsList.appendChild(starWarsAPI);
+const buttons = document.querySelector("#buttons"); 
+const results = document.querySelector("#results");
+const dispslayResults = document.querySelector("#dataDisplay");
+
+// Define asyncFetch to fetch data from the SWAPI API
+async function asyncFetch(value) {
+  const baseUrl = `https://www.swapi.tech/api/${value}/`; // Construct URL inside the function
+  try {
+    const res = await fetch(baseUrl);
+    const data = await res.json();
+
+    showResults(data, value); // Call showResults to display the data
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
 }
-})
-.catch(err => console.log(err));
+
+// Define showResults to display the fetched data 
+function showResults(data, value) {
+  let output = "";
+console.log(data)
+  if (["people", "planets", "species"].includes(value)) {
+    data.results.forEach((item) => {
+      const properties = item.properties;
+      output += 
+      `<div class="card">
+          <h4>${item.name}</h4>
+        </div>`;
+    });
+  }
+  else if(value === 'films'){
+    
+    data.result.forEach((item) =>{
+      const film = item.properties;
+      output +=
+      `<div class="card">
+        <h4>${film.title}</h4>
+        <p>Release date: ${film.release_date}</p>
+      </div>`
+    } )
+  }
+  results.innerHTML = output; // Display the received HTML into the results container
+}
+  
+
+
+// Event listener for the buttons to trigger asyncFetch on click
+buttons.addEventListener("click", (e) => {
+  const value = e.target.textContent.toLowerCase(); // Get the button's text content as the query
+  asyncFetch(value); // Call asyncFetch with the query (e.g., 'people')
+});
+
+console.log(results);

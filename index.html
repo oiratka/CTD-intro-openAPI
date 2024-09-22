@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <header>
-        <h1>OPEN API PROJECT</h1>
-    </header>
-    <section id="project">
-        <h2>Projects</h1>
-        <ul id="listOfProjects"></ul>
-    </section>
-    <section id="starWarsAPI">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starwars API by Marina</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+   <video id="myVideo" src="video.mp4" autoplay muted></video>
+    <div class="grid-container">
+      <header class="header">
+        <h1>
+          <a href="https://swapi.tech/" target="_blank"> STAR WARS API </a>
+        </h1>
         <h2>Star Wars</h2>
-        <ul id="people"></ul>
-    </section>
+      </header>
+      <main id="main">
+        <div id="buttons">
+          <button>People</button>
+          <button>Species</button>
+          <button>Planets</button>
+          <button>Films</button>
+        </div>
+        <div id="results"></div>
+        <div id="dataDisplay"></div>
+        <div id="dataDisplay"></div>
+
+      </main>
+      <footer class="footer"></footer>
+    </div>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
