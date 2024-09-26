@@ -1,8 +1,16 @@
 # CTD-intro-openAPI
+//Description:
+SWAPI is a web application that allows starwars fans and random users to learn more about starwars.
 
-1. Choose a category: people, species, planets, or films.
-2. Click on the button with the selected category.
-3. Once you clicked, you will see cards with names
-4. Choose a card and click on it. Additional information will be displayed.
-5. Click againg to close.
-6. At the bottom you can navigate between pages.
+//Features:
+- Click on the heading and go to the original SWAPI Api documentation
+- Choose a category between people, species, starships, and films.
+- Get some more details within the selected category
+- Navigate between pages through buttons Next/Previous if more than 10 cards are available from the data source
+- Play music and turn it off by clicking the button
+
+//Languages used:
+HTML, CSS, JS.
+
+//Check project
+https://github.com/oiratka/CTD-intro-openAPI
