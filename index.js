@@ -1,4 +1,3 @@
-
 const buttons = document.querySelector("#buttons");
 const results = document.querySelector("#results");
 const pages = document.querySelector("#pagination");
@@ -176,9 +175,21 @@ function getOtherPages(data, apiValue) {
 
 // Event listener for the buttons to trigger asyncFetch on click
 buttons.addEventListener("click", (e) => {
-  const apiValue = e.target.textContent.toLowerCase(); // Get the button's text content as the query
-  asyncFetch(apiValue); // Call asyncFetch with the query (e.g., 'people')
+  const apiValue = e.target.textContent.toLowerCase(); 
+  asyncFetch(apiValue); 
 
   // Store the value for later use (in a global or closure variable)
-  window.currentValue = apiValue; // Use a global variable to store the current value
+  window.currentValue = apiValue; 
 });
+
+const musicButton=document.querySelector('#music');
+musicButton.addEventListener('click', function (){
+
+    if (song.paused){
+        song.play();
+    }
+    else {
+        song.pause();
+    }
+})
+console.log(results);
