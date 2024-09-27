@@ -12,5 +12,3 @@ SWAPI is a web application that allows starwars fans and random users to learn m
 //Languages used:
 HTML, CSS, JS.
 
-//Check project
-https://github.com/oiratka/CTD-intro-openAPI
